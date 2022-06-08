@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Index Page Using local storage js
+	</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<style>
+		.container{
+			background-color: cyan;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<h2>Your Data</h2>
+		<div id="showdata">
+
+		</div>
+
+	</div>
+
+</body>
+<script>
+	var div = document.getElementById('showdata');
+	for ( var i = 0, len = localStorage.length; i < len; ++i ) {
+		var p = document.createElement('p');
+		p.innerText = localStorage.key( i ) +" : "+localStorage.getItem( localStorage.key( i ) );
+		div.appendChild(p);
+  		console.log( localStorage.getItem( localStorage.key( i ) ) );
+	}
+</script>
+
+</html>
